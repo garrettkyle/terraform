@@ -1,4 +1,4 @@
-module "vpc" {
+module "vpc_2az" {
   source                  = "../../../modules/vpc_2az"
   availability_zone_1     = "ca-central-1a"
   availability_zone_2     = "ca-central-1b"
