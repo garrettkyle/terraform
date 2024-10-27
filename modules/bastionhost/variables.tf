@@ -8,7 +8,6 @@ variable "security_group_name" {
   type        = string
 }
 
-
 variable "external_ip_address" {
   description = "External IP address CIDR to allow access to the EC2 instance from"
   type        = string
@@ -18,7 +17,6 @@ variable "iam_role_name" {
   description = "Name of the IAM role associated with EC2 instance"
   type        = string
 }
-
 
 variable "ami_id" {
   description = "EC2 AMI to use"
