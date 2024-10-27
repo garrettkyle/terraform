@@ -48,16 +48,16 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_availability_zone_1"></a> [availability\_zone\_1](#input\_availability\_zone\_1) | AWS Name of AZ1 ie ca-central-1a | `any` | n/a | yes |
-| <a name="input_availability_zone_2"></a> [availability\_zone\_2](#input\_availability\_zone\_2) | AWS Name of AZ2 ie ca-central-1b | `any` | n/a | yes |
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS region that resources will be created in | `any` | n/a | yes |
-| <a name="input_igw_name"></a> [igw\_name](#input\_igw\_name) | Name of the internet gateway | `string` | `"terraform_igw"` | no |
-| <a name="input_private_subnet_az1_cidr"></a> [private\_subnet\_az1\_cidr](#input\_private\_subnet\_az1\_cidr) | CIDR of the private subnet in AZ1 | `any` | n/a | yes |
-| <a name="input_private_subnet_az2_cidr"></a> [private\_subnet\_az2\_cidr](#input\_private\_subnet\_az2\_cidr) | CIDR of the private subnet in AZ2 | `any` | n/a | yes |
-| <a name="input_public_subnet_az1_cidr"></a> [public\_subnet\_az1\_cidr](#input\_public\_subnet\_az1\_cidr) | CIDR of the public subnet in AZ1 | `any` | n/a | yes |
-| <a name="input_public_subnet_az2_cidr"></a> [public\_subnet\_az2\_cidr](#input\_public\_subnet\_az2\_cidr) | CIDR of the public subnet in AZ2 | `any` | n/a | yes |
-| <a name="input_vpc_cidr_block"></a> [vpc\_cidr\_block](#input\_vpc\_cidr\_block) | CIDR of the VPC | `any` | n/a | yes |
-| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | Name of the VPC | `any` | n/a | yes |
+| <a name="input_availability_zone_1"></a> [availability\_zone\_1](#input\_availability\_zone\_1) | AWS Name of AZ1 ie ca-central-1a | `string` | n/a | yes |
+| <a name="input_availability_zone_2"></a> [availability\_zone\_2](#input\_availability\_zone\_2) | AWS Name of AZ2 ie ca-central-1b | `string` | n/a | yes |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS region that resources will be created in | `string` | n/a | yes |
+| <a name="input_igw_name"></a> [igw\_name](#input\_igw\_name) | Name of the internet gateway | `string` | n/a | yes |
+| <a name="input_private_subnet_az1_cidr"></a> [private\_subnet\_az1\_cidr](#input\_private\_subnet\_az1\_cidr) | CIDR of the private subnet in AZ1 | `string` | n/a | yes |
+| <a name="input_private_subnet_az2_cidr"></a> [private\_subnet\_az2\_cidr](#input\_private\_subnet\_az2\_cidr) | CIDR of the private subnet in AZ2 | `string` | n/a | yes |
+| <a name="input_public_subnet_az1_cidr"></a> [public\_subnet\_az1\_cidr](#input\_public\_subnet\_az1\_cidr) | CIDR of the public subnet in AZ1 | `string` | n/a | yes |
+| <a name="input_public_subnet_az2_cidr"></a> [public\_subnet\_az2\_cidr](#input\_public\_subnet\_az2\_cidr) | CIDR of the public subnet in AZ2 | `string` | n/a | yes |
+| <a name="input_vpc_cidr_block"></a> [vpc\_cidr\_block](#input\_vpc\_cidr\_block) | CIDR of the VPC | `string` | n/a | yes |
+| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | Name of the VPC | `string` | n/a | yes |
 
 ## Outputs
 
