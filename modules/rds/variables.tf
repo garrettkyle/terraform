@@ -28,8 +28,13 @@ variable "db_subnet_group_name" {
   type        = string
 }
 
-variable "db_subnet_id" {
-  description = "SubnetID to deploy RDS instance into"
+variable "db_subnet_id_az1" {
+  description = "SubnetID to deploy RDS instance into in AZ1"
+  type        = string
+}
+
+variable "db_subnet_id_az2" {
+  description = "SubnetID to deploy RDS instance into in AZ2"
   type        = string
 }
 
