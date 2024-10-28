@@ -63,9 +63,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_private_subnet_id_az1"></a> [private\_subnet\_id\_az1](#output\_private\_subnet\_id\_az1) | Subnet ID for private subnet in AZ1 |
-| <a name="output_private_subnet_id_az2"></a> [private\_subnet\_id\_az2](#output\_private\_subnet\_id\_az2) | Subnet ID for private subnet in AZ2 |
-| <a name="output_public_subnet_id_az1"></a> [public\_subnet\_id\_az1](#output\_public\_subnet\_id\_az1) | Subnet ID of public subnet in AZ1 |
-| <a name="output_public_subnet_id_az2"></a> [public\_subnet\_id\_az2](#output\_public\_subnet\_id\_az2) | Subnet ID for public subnet in AZ2 |
-| <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | VPCID |
+| <a name="output_vpc_cidr"></a> [vpc\_cidr](#output\_vpc\_cidr) | n/a |
+| <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | n/a |
 <!-- END_TF_DOCS -->

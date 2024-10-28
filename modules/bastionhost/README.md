@@ -41,7 +41,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_instance_arn"></a> [instance\_arn](#output\_instance\_arn) | ARN of the EC2 bastion instance |
-| <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | InstanceID of the EC2 bastion instance |
-| <a name="output_instance_ip"></a> [instance\_ip](#output\_instance\_ip) | Public IP of the EC2 bastion instance |
+| <a name="output_ec2_public_ip"></a> [ec2\_public\_ip](#output\_ec2\_public\_ip) | n/a |
 <!-- END_TF_DOCS -->
