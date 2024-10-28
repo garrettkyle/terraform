@@ -72,6 +72,11 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_vpc_cidr"></a> [vpc\_cidr](#output\_vpc\_cidr) | n/a |
+| <a name="output_private_subnet_id_az1"></a> [private\_subnet\_id\_az1](#output\_private\_subnet\_id\_az1) | n/a |
+| <a name="output_private_subnet_id_az2"></a> [private\_subnet\_id\_az2](#output\_private\_subnet\_id\_az2) | n/a |
+| <a name="output_private_subnet_id_az3"></a> [private\_subnet\_id\_az3](#output\_private\_subnet\_id\_az3) | n/a |
+| <a name="output_public_subnet_id_az1"></a> [public\_subnet\_id\_az1](#output\_public\_subnet\_id\_az1) | n/a |
+| <a name="output_public_subnet_id_az2"></a> [public\_subnet\_id\_az2](#output\_public\_subnet\_id\_az2) | n/a |
+| <a name="output_public_subnet_id_az3"></a> [public\_subnet\_id\_az3](#output\_public\_subnet\_id\_az3) | n/a |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | n/a |
 <!-- END_TF_DOCS -->
