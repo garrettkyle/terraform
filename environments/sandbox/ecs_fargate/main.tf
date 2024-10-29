@@ -1,0 +1,18 @@
+module "ecs_fargate" {
+  source                          = "../../../modules/ecs_fargate"
+  aws_region                      = "ca-central-1"
+  security_group_name             = "ecs_fargate"
+  vpc_identifier                  = "vpc-017d80000d31c77cd"
+  service_port_number             = "80"
+  ecs_cluster_name                = "ecs_fargate_cluster"
+  task_definition_name            = "nginx"
+  container_name                  = "nginx"
+  docker_image                    = "nginx:latest"
+  task_cpu_limit                  = "256"
+  task_memory_limit               = "512"
+  host_port_number                = "80"
+  availability_zone_1             = "ca-central-1a"
+  availability_zone_2             = "ca-central-1b"
+  ecs_service_name                = "nginx"
+  subnet_id                       = "subnet-009868b1a2523d686"
+}
