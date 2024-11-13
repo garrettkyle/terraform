@@ -16,6 +16,12 @@ resource "aws_security_group" "main" {
     protocol    = "-1"
     cidr_blocks = [var.external_ip_address]
   }
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = [var.vpc_cidr]
+  }
 
   egress {
     from_port   = 0

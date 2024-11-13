@@ -110,3 +110,8 @@ variable "sns_topic_name" {
   type        = string
   default     = "prometheus_alarms"
 }
+
+variable "vpc_cidr" {
+  description = "VPC CIDR Range"
+  type        = string
+}
