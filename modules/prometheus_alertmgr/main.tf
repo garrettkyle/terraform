@@ -2,6 +2,8 @@ provider "aws" {
   region = var.aws_region
 }
 
+# This will need to be restricted to home/external IP
+# but also on a port basis instead of wide open
 resource "aws_security_group" "main" {
   name        = var.security_group_name
   description = "Access to EC2 Host"
@@ -35,6 +37,26 @@ resource "aws_iam_role" "main" {
   })
 }
 
+resource "aws_iam_role_policy" "ecr_access" {
+  name = "${var.iam_role_name}_ecr_policy"
+  role = aws_iam_role.main.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = [
+          "ecr:GetAuthorizationToken",
+          "ecr:BatchGetImage",
+          "ecr:GetImage"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
+
 resource "aws_iam_instance_profile" "main" {
   name = var.iam_role_name
   role = aws_iam_role.main.name
@@ -44,13 +66,13 @@ resource "aws_launch_template" "main" {
   iam_instance_profile {
     name = var.iam_role_name
   }
-  image_id = var.ami_id
-  instance_type = var.instance_size
-  key_name = var.ssh_keypair_name
-  name = var.launch_template_name
+  image_id               = var.ami_id
+  instance_type          = var.instance_size
+  key_name               = var.ssh_keypair_name
+  name                   = var.launch_template_name
   update_default_version = "true"
+  user_data = filebase64("${var.user_data_script}")
   vpc_security_group_ids = [aws_security_group.main.id]
-  #user_data = filebase64("${path.module}/example.sh")
 }
 
 resource "aws_autoscaling_group" "main" {

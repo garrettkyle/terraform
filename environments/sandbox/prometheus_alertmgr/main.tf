@@ -1,5 +1,5 @@
-module "ec2_asg" {
-  source                                = "../../../modules/ec2_asg"
+module "prometheus_alertmgr" {
+  source                                = "../../../modules/prometheus_alertmgr"
   ami_id                                = "ami-0d13170a36bc1b384"
   asg_health_check_grace_period_seconds = "120"
   asg_name                              = "prometheus_alertmanager"
@@ -16,5 +16,6 @@ module "ec2_asg" {
   private_subnet_az2                    = "subnet-016d35fe190fb169a"
   security_group_name                   = "prometheus_alertmanager"
   ssh_keypair_name                      = "homelab"
+  user_data_script                      = "../../../scripts/prometheus/prometheus_userdata.sh"
   vpc_identifier                        = "vpc-00627e6e04393e388"
 }
