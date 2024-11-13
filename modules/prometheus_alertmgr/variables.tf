@@ -104,3 +104,9 @@ variable "s3_key" {
   description = "S3 key for the target docker compose file"
   type        = string
 }
+
+variable "sns_topic_name" {
+  description = "SNS topic name that alertmanager will send alerts to"
+  type        = string
+  default     = "prometheus_alarms"
+}

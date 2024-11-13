@@ -17,6 +17,7 @@ module "prometheus_alertmgr" {
   s3_bucket                             = "terraform-sandbox-testing"
   s3_key                                = "compose.yaml"
   security_group_name                   = "prometheus_alertmanager"
+  sns_topic_name                        = "prometheus_alarms"
   ssh_keypair_name                      = "homelab"
   user_data_script                      = "../../../scripts/prometheus/prometheus_userdata.sh"
   vpc_identifier                        = "vpc-00627e6e04393e388"

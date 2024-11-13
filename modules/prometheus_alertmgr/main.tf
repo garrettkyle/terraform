@@ -2,6 +2,8 @@ provider "aws" {
   region = var.aws_region
 }
 
+data "aws_caller_identity" "current" {}
+
 # This will need to be restricted to home/external IP
 # but also on a port basis instead of wide open
 resource "aws_security_group" "main" {
@@ -21,6 +23,10 @@ resource "aws_security_group" "main" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+resource "aws_sns_topic" "main" {
+  name = var.sns_topic_name
 }
 
 resource "aws_iam_role" "main" {
@@ -48,8 +54,8 @@ resource "aws_iam_role_policy" "ecr_access" {
         Effect   = "Allow"
         Action   = [
           "ecr:BatchGetImage",
-          "ecr:GetDownloadUrlForLayer",
           "ecr:GetAuthorizationToken",
+          "ecr:GetDownloadUrlForLayer",
           "ecr:GetImage"
         ]
         Resource = "*"
@@ -69,6 +75,22 @@ resource "aws_iam_role_policy" "s3_access_policy" {
         Effect   = "Allow"
         Action   = "s3:GetObject"
         Resource = "arn:aws:s3:::${var.s3_bucket}/${var.s3_key}"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy" "sns_access_policy" {
+  name = "${var.iam_role_name}_sns_policy"
+  role = aws_iam_role.main.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "sns:Publish"
+        Resource = "arn:aws:sns:${var.aws_region}:${data.aws_caller_identity.current.account_id}:${var.sns_topic_name}"
       }
     ]
   })
