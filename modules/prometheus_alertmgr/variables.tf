@@ -94,3 +94,13 @@ variable "user_data_script" {
   type        = string
   default     = "placeholder.sh"
 }
+
+variable "s3_bucket" {
+  description = "S3 bucket name the prometheus_alertmgt docker compose file is in"
+  type        = string
+}
+
+variable "s3_key" {
+  description = "S3 key for the target docker compose file"
+  type        = string
+}

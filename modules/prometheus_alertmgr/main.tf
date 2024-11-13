@@ -47,11 +47,28 @@ resource "aws_iam_role_policy" "ecr_access" {
       {
         Effect   = "Allow"
         Action   = [
-          "ecr:GetAuthorizationToken",
           "ecr:BatchGetImage",
+          "ecr:GetDownloadUrlForLayer",
+          "ecr:GetAuthorizationToken",
           "ecr:GetImage"
         ]
         Resource = "*"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy" "s3_access_policy" {
+  name = "${var.iam_role_name}_s3_policy"
+  role = aws_iam_role.main.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "s3:GetObject"
+        Resource = "arn:aws:s3:::${var.s3_bucket}/${var.s3_key}"
       }
     ]
   })
