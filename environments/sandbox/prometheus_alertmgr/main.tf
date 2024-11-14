@@ -15,7 +15,6 @@ module "prometheus_alertmgr" {
   private_subnet_az1                    = "subnet-009fd175384358fa1"
   private_subnet_az2                    = "subnet-016accc3b47fad3cb"
   s3_bucket                             = "terraform-sandbox-testing"
-  s3_key                                = "compose.yaml"
   security_group_name                   = "prometheus_alertmanager"
   sns_topic_name                        = "prometheus_alarms"
   ssh_keypair_name                      = "homelab"

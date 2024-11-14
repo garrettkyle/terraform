@@ -79,8 +79,16 @@ resource "aws_iam_role_policy" "s3_access_policy" {
     Statement = [
       {
         Effect   = "Allow"
-        Action   = "s3:GetObject"
-        Resource = "arn:aws:s3:::${var.s3_bucket}/${var.s3_key}"
+        Action   = [
+          "s3:DeleteObject",
+          "s3:GetObject",
+          "s3:ListBucket",
+          "s3:PutObject"
+        ]
+        Resource = [
+          "arn:aws:s3:::${var.s3_bucket}",
+          "arn:aws:s3:::${var.s3_bucket}/*"
+        ]
       }
     ]
   })
